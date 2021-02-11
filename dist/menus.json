@@ -1,0 +1,57 @@
+[
+    {
+       "MenuId":7,
+       "MenuHTMLId":"0007_Enti",
+       "MenuOnClick":null,
+       "subMenuItems": ["subitem 1", "subitem 2", "subitem 3", "subitem 4"],
+       "MenuText":"Entidades",
+       "MenuIconUrl":null,
+       "MenuActivo":1,
+       "MenuToolTip":"Carteira e Entidades",
+       "MenuActivoDesc":null,
+       "MenuUrl":null,
+       "MenuOrd":0,
+       "MenuFooter":null
+    },
+    {
+       "MenuId":64,
+       "MenuHTMLId":"0064_Pipe",
+       "MenuOnClick":null,
+       "MenuText":"Pipeline",
+       "subMenuItems": ["subitem 1", "subitem 2", "subitem 3", "subitem 4"],
+       "MenuIconUrl":null,
+       "MenuActivo":1,
+       "MenuToolTip":"Gestão de Pipeline",
+       "MenuActivoDesc":null,
+       "MenuUrl":null,
+       "MenuOrd":0,
+       "MenuFooter":null
+    },
+    {
+       "MenuId":71,
+       "MenuHTMLId":"0071_Perf",
+       "MenuOnClick":null,
+       "MenuText":"Performance",
+       "subMenuItems": ["subitem 1", "subitem 2", "subitem 3", "subitem 4"],
+       "MenuIconUrl":null,
+       "MenuActivo":1,
+       "MenuToolTip":"Para mais dados de Performance, verifique a Gestão Comercial 2.0",
+       "MenuActivoDesc":null,
+       "MenuUrl":null,
+       "MenuOrd":0,
+       "MenuFooter":null
+    },
+    {
+       "MenuId":98,
+       "MenuHTMLId":"0098_Acoes",
+       "MenuOnClick":null,
+       "MenuText":"Ações",
+       "MenuIconUrl":null,
+       "MenuActivo":1,
+       "MenuToolTip":"Menu Ações",
+       "MenuActivoDesc":null,
+       "MenuUrl":null,
+       "MenuOrd":0,
+       "MenuFooter":null
+    }
+ ]

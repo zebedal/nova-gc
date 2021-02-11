@@ -1,0 +1,222 @@
+@import 'variables';
+@import 'mixins';
+
+@font-face{
+    font-family:'Montserrat-Regular';
+    src: url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat-Light';
+    src: url('../fonts/Montserrat/Montserrat-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url('../fonts/Montserrat//Montserrat-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat-Semi-Bold';
+    src: url('../fonts/Montserrat/Montserrat-SemiBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: rgb(77,79,84); 
+    background: -webkit-linear-gradient(top, $body-background-color-1  0%, $body-background-color-2  100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat-Regular';
+    color: $font-color;
+}
+.loader-wrapper {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.loader svg > rect {
+    fill: $loader-color;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+#welcome {
+    color: $font-color-light;
+    font-size: 16px;
+    margin-top: 30px;
+}
+#gc-title {
+    font-family: 'Montserrat-Bold';
+    color: $red;
+    font-size: 30px;
+}
+.subtitle {
+    @include subtitles;
+    &-info {
+        @include subtitles-info;
+    }
+}
+
+
+
+.wrapper {
+    background: $wrapper-background-color; /* Old browsers */
+    width: 92%;
+    max-width: 1440px;
+    height: 92%;
+    border-radius: 25px;
+    display: grid;
+    grid-template-areas: "head head head"
+    "left-content left-content agenda";
+    grid-template-rows: 90px 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
+    header {
+        grid-area: head;
+        background: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 $wrapper-padding;
+        .menu-items-container {
+            display: flex;
+            align-items: center;
+            & > nav > .navbar  {
+                display: flex;
+                margin-left: 10px;
+            }
+            & nav > .navbar > .menu-item {
+                margin-left: 15px;
+                position: relative;
+                cursor: pointer;
+                transition: opacity .5s ease-out;
+            }
+            & nav > .navbar > li:hover > a {
+                opacity: .5;
+            }
+            & nav > .navbar > li:hover .sub-menu {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            & nav > .navbar > li svg {
+                transition: transform .2s ease-in-out;
+            }
+            & nav > .navbar > li:hover svg {
+                transform: rotate(180deg)
+            }
+            & nav > .navbar > li > ul.sub-menu {
+                position: absolute;
+                padding: 15px;
+                border-radius: 5px;
+                top: 20px;
+                left: 0;
+                white-space: nowrap;
+                background: white;
+                line-height: 2em;
+                opacity: 0;
+                transform: translateX(-20px);
+                transition: all .5s ease-out;
+            }
+            & nav > .navbar ul.sub-menu .sub-menu-item {
+                transition: all .5s ease-in-out;
+            }
+            & nav > .navbar ul.sub-menu .sub-menu-item:hover {
+                transform: translateX(10px);
+            }
+            & nav > .navbar ul.sub-menu .sub-menu-item > a {
+                @include menu-items;
+                transition: all .5s ease-in-out;
+            }
+            & nav > .navbar ul.sub-menu .sub-menu-item:hover > a{
+                color: $red;
+            }
+            & nav > .navbar > li svg {
+                margin-left: 5px;
+            }
+            & > nav > .navbar > li  .chevron-down{
+                fill: $menu-item-color;
+            }
+            & > nav > .navbar > li > a{
+                @include menu-items;
+            }
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 220px;
+            .user-info-item {
+                cursor: pointer;
+            }
+            .user-details {
+                display: flex;
+                align-items: center;
+                img {
+                    margin-left: 10px;
+                }
+            }
+            .vertical-line {
+                width: 1px;
+                height: 25px;
+                background: rgba($menu-item-color, .3);
+            }
+            #userName {
+                font-size: $menu-item-size;
+                margin-right: 5px;
+            }
+        }
+       
+        
+    }
+    .left-content {
+        grid-area: left-content;
+       /*  background: green; */
+        padding-left: calc(#{$wrapper-padding} + 10px) ;
+        .carteira{
+        margin-top: 80px;
+        }
+    }
+
+    
+    .agenda {
+        grid-area: agenda;
+        /* background: red; */
+        padding-right: $wrapper-padding;
+    }
+}
+
+
+//triangle on top of sub menu
+/* .sub-menu:before,
+.sub-menu:after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 19px;
+  border: 11px solid transparent;
+  border-bottom-color: $red;
+}
+
+.sub-menu:after {
+  left: 20px;
+  border: 10px solid transparent;
+  border-bottom-color: $red;
+} */

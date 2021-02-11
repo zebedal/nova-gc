@@ -1,0 +1,17 @@
+@import 'variables';
+
+
+@mixin menu-items {
+    font-size: $menu-item-size;
+    color: $menu-item-color;
+}
+
+@mixin subtitles {
+    color: $font-color;
+    font-size: $subtitle-size;
+    font-family: 'Montserrat-Semi-Bold';
+}
+@mixin subtitles-info {
+    color: $font-color-light;
+    font-size: $subtitle-info-size;
+}
