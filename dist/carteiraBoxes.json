@@ -1,0 +1,24 @@
+[
+    
+    {
+       "id": 1,
+       "boxText": "Facturação total mensal",
+       "boxValue": "83.386€"
+    },
+    {
+        "id": 2,
+        "boxText": "Vm em contratos",
+        "boxValue": "72.556€"
+     },
+     {
+        "id": 3,
+        "boxText": "Grupos",
+        "boxValue": "45"
+     },
+     {
+        "id": 4,
+        "boxText": "Entidades",
+        "boxValue": "120"
+     }
+]
+    

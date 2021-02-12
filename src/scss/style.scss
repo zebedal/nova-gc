@@ -12,7 +12,7 @@
 
 @font-face {
     font-family: 'Montserrat-Medium';
-    src: url('../fonts/Montserrat//Montserrat-Medium.ttf') format('truetype');
+    src: url('../fonts/Montserrat/Montserrat-Medium.ttf') format('truetype');
 }
 @font-face {
     font-family: 'Montserrat-Semi-Bold';
@@ -22,6 +22,7 @@
     font-family: 'Montserrat-Bold';
     src: url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
 }
+
 
 *{
     padding: 0;
@@ -39,6 +40,9 @@ body {
     font-family: 'Montserrat-Regular';
     color: $font-color;
 }
+hr {
+    opacity: .3;
+}
 .loader-wrapper {
     position: absolute;
     top: 50%;
@@ -48,6 +52,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 .loader svg > rect {
     fill: $loader-color;
@@ -78,7 +83,7 @@ li {
 
 
 .wrapper {
-    background: $wrapper-background-color; /* Old browsers */
+    background: $wrapper-background-color; 
     width: 92%;
     max-width: 1440px;
     height: 92%;
@@ -107,22 +112,25 @@ li {
                 margin-left: 15px;
                 position: relative;
                 cursor: pointer;
+                white-space: nowrap;
                 transition: opacity .5s ease-out;
             }
-            & nav > .navbar > li:hover > a {
+            & nav > .navbar > .menu-item:hover > a {
                 opacity: .5;
             }
-            & nav > .navbar > li:hover .sub-menu {
+             & nav > .navbar > .menu-item:hover .sub-menu {
                 opacity: 1;
                 transform: translateX(0);
-            }
-            & nav > .navbar > li svg {
+                pointer-events: all;
+            } 
+            & nav > .navbar > .menu-item svg {
                 transition: transform .2s ease-in-out;
             }
-            & nav > .navbar > li:hover svg {
+            & nav > .navbar > .menu-item:hover svg {
                 transform: rotate(180deg)
             }
-            & nav > .navbar > li > ul.sub-menu {
+            & nav > .navbar > .menu-item > ul.sub-menu {
+                pointer-events: none;
                 position: absolute;
                 padding: 15px;
                 border-radius: 5px;
@@ -191,7 +199,116 @@ li {
        /*  background: green; */
         padding-left: calc(#{$wrapper-padding} + 10px) ;
         .carteira{
-        margin-top: 80px;
+        margin-top: 60px;
+        .carteira-boxes-container {
+            border-radius: 25px;
+            background-color: white;
+            margin-top: 20px;
+            margin-left: -15px;
+            padding: 20px 10px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,.4);
+            display: flex;
+            justify-content: flex-start;
+            flex-flow: row wrap;
+            .carteira-box {
+                @include carteira-boxes;
+                .arrow-up {
+                    position: absolute;
+                    top: -10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 0; 
+                    height: 0; 
+                    border-left: 19px solid transparent;
+                    border-right: 19px solid transparent;
+                    &.green {
+                        border-bottom: 19px solid $green;
+                    }
+                    &.red {
+                        border-top: 19px solid $red;
+                    }
+                  }
+                  .arrow-down {
+
+                  }
+                  &.triangle {
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: flex-end;
+                      & > .carteira-box-text {
+                          margin-bottom: 10px;
+                      }
+                  }
+            }
+        }
+        }
+
+        .pipeline {
+            margin-top: 60px;
+            .pipeline-container {
+                margin-top: 20px;
+                border-radius: 25px;
+                background-color: white;
+                padding: 20px 10px;
+                box-shadow: 2px 2px 5px rgba(0,0,0,.4);
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                position: relative;
+                .more-options {
+                    position: absolute;
+                    top: 10px;
+                    right: 20px;
+                    cursor: pointer;
+                    transition: opacity .4s ease-out;
+                    &:hover {
+                        opacity: .5;
+                    }
+                }
+                .objectivo-global {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 30px;
+                    .objectivo {
+                        color: $red;
+                        font-size: 26px;
+                        font-family: 'Montserrat-Semi-Bold';
+                    }
+                    #objectivo-placeholder {
+                        font-family: 'Montserrat-Semi-Bold';
+                        font-size: 14px;
+                        color: $font-color;
+                    }
+                    .objectivo-global-boxes-container {
+                        width: 100%;
+                        display: flex;
+                        flex-flow: row nowrap;
+                        .objectivo-global-box {
+                            width: 103px;
+                            height: 60px;
+                            background: $wrapper-background-color;
+                            border-radius: 10px;
+                            margin: 5px;
+                            display: flex;
+                            flex-flow: column nowrap;
+                            align-items: center;
+                            justify-content: center;
+                            box-shadow: 0 3px 6px rgba(0,0,0, .25);
+                            &-value {
+                                font-size: $boxes-value;
+                                font-family: 'Montserrat-Semi-Bold';
+                                color: $boxes-value-color;
+                            }
+                            &-text {
+                                font-size: 10px;
+                                color: $font-color-light;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -199,10 +316,55 @@ li {
     .agenda {
         grid-area: agenda;
         /* background: red; */
-        padding-right: $wrapper-padding;
+        border-radius: 25px;
+        background-color: white;
+        margin-right: $wrapper-padding;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 60px;
+        padding: 30px 20px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,.4);
+        position: relative;
+        /* background-image: linear-gradient(#FFFFFF, #F6F6F6); */
+        .more-options {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+        }
+        .agenda-container {
+            height: 35%;
+            margin-top: 30px;
+            position: relative;
+            .agenda-item {
+                @include agenda-item;
+            }
+            #add-agenda-item {
+                position: absolute;
+                right: 0;
+            }
+        }
     }
 }
 
+
+//Chart styles
+#chartdiv {
+    width: 52%;
+    height: 284px;
+    flex: 1 1 350px;
+  }
+  g[aria-labelledby=id-66-title] {
+    display: none;
+  }
+  tspan {
+      font-size: 9px;
+      font-weight: bold;
+  }
+
+//Calendar styles
+#caleandar {
+    margin-top: 40px;
+}
 
 //triangle on top of sub menu
 /* .sub-menu:before,

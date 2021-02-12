@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
-    entry: './src/js/app.js',
+    entry: ['babel-polyfill','./src/js/app.js'],
     output: {
       path: path.resolve(__dirname + '/dist'),
       filename: 'js/bundle.js'
@@ -18,12 +18,12 @@ module.exports = {
         template: path.resolve(__dirname + '/src/index.html'),
         inject: 'head'
       }),
-
+      
     ],
     module: {
       rules: [
         {
-          test: /\.scss$/,
+          test: /\.(scss|css)$/,
           loaders: [
             'style-loader',
             'css-loader',
@@ -34,7 +34,13 @@ module.exports = {
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
-            loader: 'babel-loader'
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: [
+                ["@babel/plugin-proposal-class-properties", { "loose": true }]
+              ]
+            }
           }
         },
         {

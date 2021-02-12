@@ -29,7 +29,6 @@ export class Menu {
     static buildMenu(menuItemsObj) {
         const hook = document.getElementById('navbar');
         for (const menuItem of menuItemsObj) {
-            console.log(menuItem.MenuToolTip);
             const htmlString = `<li class="menu-item" title=${menuItem.MenuToolTip.replace(/[ ]/g,"\u00a0")}>
             <a href="#" data-url=${menuItem.MenuHTMLId}>${menuItem.MenuText} </a><svg width="12.471" height="7.568" viewBox="0 0 12.471 7.568">
                 <path class="chevron-down" 
@@ -41,9 +40,6 @@ export class Menu {
         </li>`;
 
             hook.insertAdjacentHTML("beforeend", htmlString);
-
-
-
 
         }
     }
