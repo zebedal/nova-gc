@@ -16,12 +16,11 @@ export class Menu {
     }
 
     static buildSubMenu(subMenuItems) {
-        return `<ul class="sub-menu">
-        <li class="sub-menu-item"><a href="#">Sub item 1</a></li>
-        <li class="sub-menu-item"><a href="#">Sub item 2</a></li>
-        <li class="sub-menu-item"><a href="#">Sub item 3</a></li>
-        <li class="sub-menu-item"><a href="#">Sub item 4</a></li>
-        </ul>`;
+        let htmlString = "";
+        for(const item of subMenuItems) {
+            htmlString += `<li class="sub-menu-item"><a href="${item.subMenuUrl}">${item.menuText}</a></li>`;
+        }
+        return htmlString;
     }
 
 
@@ -35,12 +34,11 @@ export class Menu {
                     d="M6.149,16.051.6,10.5a.685.685,0,0,1,0-.969l.647-.647a.685.685,0,0,1,.968,0l4.419,4.4,4.419-4.4a.685.685,0,0,1,.968,0l.647.647a.685.685,0,0,1,0,.969l-5.55,5.55A.685.685,0,0,1,6.149,16.051Z"
                     transform="translate(-0.398 -8.683)" fill="#363636" />
             </svg>
+            ${menuItem.subMenuItems ? `<ul class="sub-menu">` : ""}
             ${menuItem.subMenuItems ? this.buildSubMenu(menuItem.subMenuItems) : ''}
-            
+            ${menuItem.subMenuItems ? `</ul>` : ""}
         </li>`;
-
             hook.insertAdjacentHTML("beforeend", htmlString);
-
         }
     }
 }

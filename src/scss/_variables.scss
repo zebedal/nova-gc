@@ -13,21 +13,23 @@ $body-background-color-2: #000000;
 $wrapper-background-color: #f2f4f9;
 $wrapper-padding: 80px;
 
-//menu-items
+//menu and sub menu items
 $menu-item-size: 12px;
+$sub-menu-item-size: 11px;
 $menu-item-color: #363636;
+$sub-menu-background: #363636;
+$sub-menu-items-color: white;
 
 //subtitles and subtitles info paragraphs
 $subtitle-size: 20px;
 $subtitle-info-size: 12px;
 
 //carteira boxes
-$box-width: 100px;
+$box-width: 90px;
 $box-height: 75px;
 $box-color-1: #4D4F54;
 $box-color-2: #363636;
 $box-color-3: #606B72;
-
 
 //Pipeline
 $boxes-value: 14px;
@@ -40,3 +42,10 @@ $agenda-item-date-size: 11px;
 $agenda-item-text-color: #363636;
 $agenda-item-date-color: #363636;
 $agenda-item-icon-size: 25px;
+
+//agenda selector box
+$list-item-size: 11px;
+$list-item-color: white;
+
+
+

@@ -21,7 +21,7 @@ export class Carteira {
 
         boxes.forEach((box, index) => {
             let htmlString = "";
-            console.log(box.id);
+
             if (box.id == 1) {
                 htmlString = `<div class="carteira-box triangle" style="background-color: ${this.boxesColors[index]}"><div class="carteira-box-icon"><div class="arrow-up green"></div></div><div class="carteira-box-text">${box.boxText}</div><div class="carteira-box-value">${box.boxValue}</div></div>`;
                 hook.insertAdjacentHTML('beforeend', htmlString)

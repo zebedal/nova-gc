@@ -4,6 +4,26 @@
     font-size: $menu-item-size;
     color: $menu-item-color;
 }
+@mixin sub-menu {
+    pointer-events: none;
+    position: absolute;
+    background: $sub-menu-background;
+    padding: 15px;
+    border-radius: 10px;
+    top: 20px;
+    left: 0;
+    white-space: nowrap;
+    line-height: 2em;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease-out;
+    z-index: 9;
+}
+@mixin sub-menu-items {
+    font-size: $sub-menu-item-size;
+    color: $sub-menu-items-color;
+    transition: all .5s ease-in-out;
+}
 
 @mixin subtitles {
     color: $font-color;
@@ -44,8 +64,11 @@
     flex-flow: row nowrap;
     align-items: center;
     margin-top: 10px;
+    z-index: -1;
+    cursor: pointer;
     .agenda-item-icon img {
         width: $agenda-item-icon-size;
+        height: 21px;
     }
     .agenda-item-details {
         margin-left: 10px;

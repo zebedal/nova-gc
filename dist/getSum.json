@@ -1,0 +1,29 @@
+[
+    {
+        "Num": "23.386€",
+        "TCV": "2338654.057800",
+        "RLMC": 2338654.057800,
+        "Relacao": 3,
+        "TaxaSucesso": 29.76,
+        "numeradorTaxaSucesso": 5537,
+        "denominadorTaxaSucesso": 19876
+    },
+    {
+        "Num": "23.386€",
+        "TCV": "8311123.286987",
+        "RLMC": 2338654.057800,
+        "Relacao": 3,
+        "TaxaSucesso": 29.76,
+        "numeradorTaxaSucesso": 5537,
+        "denominadorTaxaSucesso": 19876
+    },
+    {
+        "Num": 52111345.125987,
+        "TCV": "6311123.286987",
+        "RLMC": 2338654.057800,
+        "Relacao": 3,
+        "TaxaSucesso": 29.76,
+        "numeradorTaxaSucesso": 5537,
+        "denominadorTaxaSucesso": 19876
+    }
+]
