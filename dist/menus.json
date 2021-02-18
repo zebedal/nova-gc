@@ -1,8 +1,6 @@
 [
     {
        "MenuId":7,
-       "MenuHTMLId":"0007_Enti",
-       "MenuOnClick":null,
        "MenuText":"Entidades",
        "subMenuItems" : [
           {
@@ -39,10 +37,7 @@
        "MenuIconUrl":null,
        "MenuActivo":1,
        "MenuToolTip":"Carteira e Entidades",
-       "MenuActivoDesc":null,
-       "MenuUrl":null,
-       "MenuOrd":0,
-       "MenuFooter":null
+       "MenuUrl":null
     },
     {
        "MenuId":64,
