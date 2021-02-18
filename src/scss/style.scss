@@ -11,13 +11,32 @@
 }
 
 @font-face {
-    font-family: "Montserrat-Medium";
-    src: url("../fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
-}
-@font-face {
     font-family: "Montserrat-Semi-Bold";
     src: url("../fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
 }
+
+//scrollbar for chrome
+::-webkit-scrollbar {
+    width: 6px;
+    height: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #474555;
+    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background: #474555;
+  }
 
 //global styles
 * {
@@ -162,15 +181,19 @@ li {
             align-items: center;
             justify-content: space-around;
             width: 220px;
-            .support-icon-wrapper {
+            .support-icon-wrapper, .user-notifications-wrapper {
+                position: relative;
+                & svg{
+                    transition: opacity .5s ease-out;
+                }
                 &:hover > svg {
                     opacity: .5;
                 }
-                position: relative;
                 &:hover > .sub-menu {
                     opacity: 1;
                     transform: translateX(0);
                     pointer-events: all;
+                    z-index: 9;
                 }
             }
             .user-info-item {
@@ -323,6 +346,7 @@ li {
         padding: 30px 20px;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
         position: relative;
+        z-index: 8;
         /* background-image: linear-gradient(#FFFFFF, #F6F6F6); */
         .more-options-wrapper {
             position: absolute;
@@ -456,6 +480,11 @@ li {
             }
         }
     }
+    &.blur {
+        filter: blur(3px);
+        opacity: .4;
+        pointer-events: none;
+    }
 }
 
 //Chart styles
@@ -477,22 +506,32 @@ tspan {
     margin-top: 40px;
 }
 
-//tabs teste
+//tabs
 .tabs {
     width: 500px;
-    height: 250px;
     background: white;
     position: absolute;
     top: 20%;
     left: 50%;
-    transform: translate(-50%, -20%);
+    transform: translate(-50%, -30%);
     z-index: 99999;
     overflow: hidden;
     border-radius: 25px;
     box-shadow: 2px 2px 5px rgba(0,0,0, .4);
     padding: 20px 30px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s ease-out;
     & .tabs-title {
         display: flex;
+        & #closeTabs {
+            cursor: pointer;
+            transition: all .5s ease-out;
+        }
+        & #closeTabs:hover {
+            width: 15px;
+            opacity: .5;
+        }
     }
     & .tabs-title svg  {
         margin-left: auto;
@@ -541,25 +580,100 @@ tspan {
     }
     & .tab-body {
         position: relative;
-        height: calc(100% -60px);
-        padding: 10px 5px;
+        height: 220px;
         margin-top: 20px;
+        overflow-y: auto;
+       
     }
     & .tab-body > div {
         position: absolute;
+        width: 100%;
         opacity: 0;
         margin-top: 10px;
+        padding-right: 10px;
         transform: scale(0.9);
         transition: all .2s ease-in-out;
+        z-index: 1;
         &.active {
             top: 0;
             opacity: 1;
             transform: scale(1);
-            margin-top: 0;
             transition: all .5s ease-in-out;
+            z-index: 2;
         }
     }
-    p {
-        font-size: 12px;
+    & .tab-body > div li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-flow: row nowrap;
+        font-size: 11px;
+        padding: 10px 0;
+        cursor: pointer;
+        border-bottom: 1px solid rgba(0,0,0, .1);
+        transition: all .4s ease-in-out;
+        & > a {
+            color: $font-color;
+        }
+    }
+    & .tab-body > div li:hover {
+        background: #e0e0e0;
+    }
+    & .tab-footer {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 10px;
+        .button {
+            @include button;
+            &:hover {
+                width: 120px;
+                /* background: $red; */
+            }
+           
+            & svg path:nth-child(5){
+                transition: all .3s ease-out;
+            }
+            &:hover svg path:nth-child(5) {
+                transform: rotate(-18deg);
+                transform-origin: left;
+            }
+            & .button-text{
+                white-space: nowrap;
+            }
+            .button-icon {
+                margin-right: 10px;
+                margin-left: 2.5px;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                background: $red;
+                transition: all .3s ease-in-out;
+                transition-delay: .3s;
+                z-index: -1;
+                transform: scaleX(0);
+                transform-origin: right;
+            
+            }
+            &:hover::before {
+                transform: scaleX(1);
+            }
+            &.apagar {
+                margin-right: 20px;
+            }
+        }
+
+
+    }
+    &.open {
+        transform: translate(-50%, -20%);
+        opacity: 1;
+        pointer-events: all;
     }
 }

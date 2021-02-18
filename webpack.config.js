@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 
 module.exports = {
@@ -18,7 +19,7 @@ module.exports = {
         template: path.resolve(__dirname + '/src/index.html'),
         inject: 'head'
       }),
-      
+      new BundleAnalyzerPlugin(),
     ],
     module: {
       rules: [
@@ -56,5 +57,13 @@ module.exports = {
           ]
         }
       ]
+    },
+    externals: function (context, request, callback) {
+      if (/xlsx|canvg|pdfmake|moment/.test(request)) {
+        return callback(null, "commonjs " + request);
+      }
+      callback();
     }
   }
+
+  

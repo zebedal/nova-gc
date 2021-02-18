@@ -2,7 +2,11 @@ export class Menu {
 
 
     static init() {
-        this.getMenuItems().then(menuItemsObj => this.buildMenu(menuItemsObj));
+        this.getMenuItems().then(menuItemsObj => {
+            this.buildMenu(menuItemsObj);
+            this.openTabsListener();
+            this.closeTabsListener();
+        });
     }
 
     static async getMenuItems() {
@@ -23,8 +27,6 @@ export class Menu {
         return htmlString;
     }
 
-
-
     static buildMenu(menuItemsObj) {
         const hook = document.getElementById('navbar');
         for (const menuItem of menuItemsObj) {
@@ -40,6 +42,23 @@ export class Menu {
         </li>`;
             hook.insertAdjacentHTML("beforeend", htmlString);
         }
+    }
+
+    static openTabsListener() {
+        document.querySelector('.user-notifications-wrapper').addEventListener('click', () => {
+            const innerWrapper = document.querySelector('.inner-wrapper');
+            innerWrapper.classList.add('blur');
+            document.querySelector('.tabs').classList.add('open');
+        })
+    }
+
+    static closeTabsListener() {
+        const tabs = document.querySelector('.tabs');
+        const closeTab = document.getElementById('closeTabs').addEventListener('click', () => {
+            const innerWrapper = document.querySelector('.inner-wrapper');
+            innerWrapper.classList.remove('blur');
+            tabs.classList.remove('open');
+        })
     }
 }
 

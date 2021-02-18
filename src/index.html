@@ -21,7 +21,7 @@
         <div class="tabs">
 
             <div class="tabs-title">
-                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg id="closeTabs" width="20" height="21" viewBox="0 0 20 21" fill="none">
                     <path
                         d="M11.8323 10.27L19.6199 2.48213C20.1267 1.97556 20.1267 1.15651 19.6199 0.649944C19.1133 0.143378 18.2943 0.143378 17.7877 0.649944L9.99988 8.43778L2.21228 0.649944C1.70548 0.143378 0.886669 0.143378 0.380103 0.649944C-0.126701 1.15651 -0.126701 1.97556 0.380103 2.48213L8.1677 10.27L0.380103 18.0578C-0.126701 18.5644 -0.126701 19.3834 0.380103 19.89C0.632555 20.1427 0.964493 20.2696 1.29619 20.2696C1.62789 20.2696 1.95959 20.1427 2.21228 19.89L9.99988 12.1021L17.7877 19.89C18.0404 20.1427 18.3721 20.2696 18.7038 20.2696C19.0355 20.2696 19.3672 20.1427 19.6199 19.89C20.1267 19.3834 20.1267 18.5644 19.6199 18.0578L11.8323 10.27Z"
                         fill="#363636" />
@@ -84,12 +84,49 @@
             <div class="tab-indicator"></div>
             <div class="tab-body">
                 <div class="active">
-                    <div>
+                    <ul>
 
-                        <p>Laboris non qui laboris ullamco anim dolore est amet pariatur tempor non excepteur. Magna
-                            deserunt nisi ea laborum laboris et reprehenderit esse reprehenderit tempor. Mollit
-                            aliqua deserunt incididunt do aliquip in quis culpa.</p>
-                    </div>
+                        <li class="tab-list-item">
+                            <a href="#"><b>17-02-2021</b> - Pedido de contrato por parte da entidade xpto</a>
+                            <span title="test"><svg height="20" width="20">
+                                    <circle cx="10" cy="10" r="5" stroke="black" stroke-width="0" fill="red" />
+                                </svg></span>
+
+                        </li>
+
+                        <li class="tab-list-item">
+                            <a href="#"><b>18-02-2021</b>  - Pedido de contrato por parte da entidade xpto</a>
+                            <svg height="20" width="20">
+                                <circle cx="10" cy="10" r="5" stroke="black" stroke-width="0" fill="red" />
+                            </svg>
+                        </li>
+
+                        <li class="tab-list-item">
+                            <a href="#"><b>19-02-2021</b>  - Pedido de contrato por parte da entidade xpto</a>
+                            <svg height="20" width="20">
+                                <circle cx="10" cy="10" r="5" stroke="black" stroke-width="0" fill="red" />
+                            </svg>
+                        </li>
+
+                        <li class="tab-list-item">
+                            <a href=""><b>20-02-2021</b>  - Pedido de contrato por parte da entidade xpto</a>
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 6.72107L0.9205 5.77257L5.432 8.46699L13.2107 1.16016L14 1.94999L5.83333 12.8268L0 6.72107Z" fill="#48A700"/>
+                                </svg>
+                                
+                                
+                        </li>
+
+                        <li class="tab-list-item">
+                            <a href=""><b>21-02-2021</b>  - Pedido de contrato por parte da entidade xpto</a>
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 6.72107L0.9205 5.77257L5.432 8.46699L13.2107 1.16016L14 1.94999L5.83333 12.8268L0 6.72107Z" fill="#48A700"/>
+                                </svg>
+                                
+                                
+                        </li>
+
+                    </ul>
                 </div>
                 <div class="">
                     <div>
@@ -106,35 +143,70 @@
                             deserunt nisi ea laborum laboris et reprehenderit esse reprehenderit tempor. Mollit
                             aliqua deserunt incididunt do aliquip in quis culpa.</p>
                     </div>
+                </div>
+            </div>
+            <div class="tab-footer">
+
+                <div class="button apagar">
+                    <span class="button-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="stroke"
+                                d="M4.22354 18.764C3.73447 17.764 3.68988 7.65731 3.68988 7.65731L3.6899 7.17725L16.3717 7.17731C16.3717 7.17731 16.2917 17.764 15.7917 18.764C15.2917 19.764 4.71261 19.764 4.22354 18.764Z"
+                                stroke="white" />
+                            <path class="fill"
+                                d="M10 17.5C10.3452 17.5 10.625 17.2202 10.625 16.875V8.75C10.625 8.40484 10.3452 8.125 10 8.125C9.65484 8.125 9.375 8.40484 9.375 8.75V16.875C9.375 17.2202 9.6548 17.5 10 17.5Z"
+                                fill="white" />
+                            <path class="fill"
+                                d="M13.125 17.5C13.4702 17.5 13.75 17.2202 13.75 16.875V8.75C13.75 8.40484 13.4702 8.125 13.125 8.125C12.7798 8.125 12.5 8.40484 12.5 8.75V16.875C12.5 17.2202 12.7798 17.5 13.125 17.5Z"
+                                fill="white" />
+                            <path class="fill"
+                                d="M6.875 17.5C7.22016 17.5 7.5 17.2202 7.5 16.875V8.75C7.5 8.40484 7.22016 8.125 6.875 8.125C6.52984 8.125 6.25 8.40484 6.25 8.75V16.875C6.25 17.2202 6.5298 17.5 6.875 17.5Z"
+                                fill="white" />
+                            <path class="stroke"
+                                d="M12.5 4C12.5 4 17 4 17.5 4C18 4 18 7 17.5 7C17 7 3.00002 7 2.50002 7C2.00002 7 2.00005 4 2.50002 4C3 4 7.50003 4 7.50003 4M12.5 4C12.5 4 13 1.5 12.5 1.5C12.0001 1.5 8.00003 1.5 7.5 1.5C6.99997 1.5 7.50003 4 7.50003 4M12.5 4H7.50003"
+                                stroke="white" />
+                        </svg>
+                    </span>
+                    <span class="button-text">Apagar todos</span>
+                </div>
+
+                <div class="button marcar">
+                    <span class="button-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.8333 18.3332H0V2.49984H15.8333V4.1665H15V3.33317H0.833333V17.4998H15V9.5815H15.8333V18.3332ZM20 2.23734L7.52833 15.464L2.89667 9.99984L3.53167 9.45984L7.55917 14.2157L19.3933 1.6665L20 2.23734V2.23734Z" fill="white"/>
+                            </svg>
+                            
+                    </span>
+                    <span class="button-text">Marcar todos</span>
                 </div>
             </div>
         </div>
 
         <div class="inner-wrapper">
-        <div class="loader-wrapper">
-            <div class="loader loader--style5" title="4">
-                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px"
-                    viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-                    <rect x="0" y="0" width="4" height="10" fill="#333">
-                        <animateTransform attributeType="xml" attributeName="transform" type="translate"
-                            values="0 0; 0 20; 0 0" begin="0" dur="0.6s" repeatCount="indefinite" />
-                    </rect>
-                    <rect x="10" y="0" width="4" height="10" fill="#333">
-                        <animateTransform attributeType="xml" attributeName="transform" type="translate"
-                            values="0 0; 0 20; 0 0" begin="0.2s" dur="0.6s" repeatCount="indefinite" />
-                    </rect>
-                    <rect x="20" y="0" width="4" height="10" fill="#333">
-                        <animateTransform attributeType="xml" attributeName="transform" type="translate"
-                            values="0 0; 0 20; 0 0" begin="0.4s" dur="0.6s" repeatCount="indefinite" />
-                    </rect>
-                </svg>
+            <div class="loader-wrapper">
+                <div class="loader loader--style5" title="4">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px"
+                        viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                        <rect x="0" y="0" width="4" height="10" fill="#333">
+                            <animateTransform attributeType="xml" attributeName="transform" type="translate"
+                                values="0 0; 0 20; 0 0" begin="0" dur="0.6s" repeatCount="indefinite" />
+                        </rect>
+                        <rect x="10" y="0" width="4" height="10" fill="#333">
+                            <animateTransform attributeType="xml" attributeName="transform" type="translate"
+                                values="0 0; 0 20; 0 0" begin="0.2s" dur="0.6s" repeatCount="indefinite" />
+                        </rect>
+                        <rect x="20" y="0" width="4" height="10" fill="#333">
+                            <animateTransform attributeType="xml" attributeName="transform" type="translate"
+                                values="0 0; 0 20; 0 0" begin="0.4s" dur="0.6s" repeatCount="indefinite" />
+                        </rect>
+                    </svg>
 
+                </div>
+                <p>Loading awesome content...</p>
             </div>
-            <p>Loading awesome content...</p>
-        </div>
 
-        
+
             <header>
                 <div class="menu-items-container">
                     <svg id="logo" width="47.045" height="47.375" viewBox="0 0 47.045 47.375">
@@ -280,7 +352,7 @@
 
                 </div>
             </div>
-            
+
             <div class="agenda">
                 <div class="more-options-wrapper">
                     <div class="more-options-icon"><svg width="20" height="5" viewBox="0 0 20 5">

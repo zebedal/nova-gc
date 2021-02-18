@@ -24,7 +24,8 @@ export class Pipeline {
         const valueBoxes = document.querySelectorAll('.objectivo-global-box-value');
         values.forEach((el, index) => {
             let num = utils.numberToReal(el.TCV);
-            valueBoxes[index].textContent = num;
+            console.log(num);
+            valueBoxes[index].textContent = num + '€';
         });
        
     }

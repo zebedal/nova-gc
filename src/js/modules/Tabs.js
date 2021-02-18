@@ -1,13 +1,11 @@
 
 
-export const init = () => {
+export const initTabsListeners = () => {
     const tabHeaders = Array.from(document.querySelectorAll('.tab-header > div'));
     const tabBodies = Array.from(document.querySelectorAll('.tab-body > div'));
     const indicator = document.querySelector('.tab-indicator');
     const wrapper = document.querySelector('.inner-wrapper');
 
-    wrapper.style.opacity = .3;
-    wrapper.style.filter = 'blur(2px)';
 
     tabHeaders.forEach((el, index) => {
         el.addEventListener('click', e => {
@@ -27,3 +25,4 @@ export const init = () => {
         })
     })
 }
+
