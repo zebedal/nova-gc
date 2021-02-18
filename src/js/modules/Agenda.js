@@ -41,7 +41,7 @@ export class Agenda {
     }
 
     static changePeriodEventListeners() {
-        const selectors = Array.from(document.querySelectorAll('.selector-input'));
+        const selectors = Array.from(document.querySelectorAll('.selector-input.agenda'));
         selectors.forEach(selector => {
             selector.addEventListener('click', function(e) {
                 this.classList.toggle('selected');

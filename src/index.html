@@ -13,9 +13,7 @@
 
 <body>
 
-    <!--Loader animation-->
-
-
+    
     <div class="wrapper">
 
         <div class="tabs">
@@ -183,6 +181,8 @@
         </div>
 
         <div class="inner-wrapper">
+            <!--Loader animation-->
+            
             <div class="loader-wrapper">
                 <div class="loader loader--style5" title="4">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -281,12 +281,63 @@
                     <h2 class="subtitle">O meu pipeline</h2>
                     <p class="subtitle-info">Informação de placeholder relativamente ao pipeline</p>
                     <div class="pipeline-container">
-                        <div class="more-options"><svg width="20" height="5" viewBox="0 0 20 5">
+                        <div class="more-options-wrapper">
+
+                            <div class="more-options-icon">
+                                <svg width="20" height="5" viewBox="0 0 20 5">
                                 <path
                                     d="M6.5,10A2.5,2.5,0,1,0,9,12.5,2.507,2.507,0,0,0,6.5,10Zm15,0A2.5,2.5,0,1,0,24,12.5,2.507,2.507,0,0,0,21.5,10ZM14,10a2.5,2.5,0,1,0,2.5,2.5A2.507,2.507,0,0,0,14,10Z"
                                     transform="translate(-4 -10)" fill="#363636" />
-                            </svg>
+                                </svg>
+                            </div>
+
+                            <div class="more-options-selector ">
+                                <ul>
+                                    <li>
+                                        <input class="selector-input pipeline" type="checkbox" id="item-21" name="item-21">
+                                        <label for="item-21" class="text">Hoje</label>
+                                        <label for="item-21" class="button"></label>
+                                        <div class="wrapper-selector-box">
+                                            <svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 98.5 98.5"
+                                                enable-background="new 0 0 98.5 98.5" xml:space="preserve">
+                                                <path class="checkmark" fill="none" stroke-width="8" stroke-miterlimit="10"
+                                                    d="M81.7,17.8C73.5,9.3,62,4,49.2,4
+                                            C24.3,4,4,24.3,4,49.2s20.3,45.2,45.2,45.2s45.2-20.3,45.2-45.2c0-8.6-2.4-16.6-6.5-23.4l0,0L45.6,68.2L24.7,47.3" />
+                                            </svg>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <input class="selector-input pipeline" type="checkbox" id="item-22" name="item-22">
+                                        <label for="item-22" class="text">Últimos 7 dias</label>
+                                        <label for="item-22" class="button"></label>
+                                        <div class="wrapper-selector-box">
+                                            <svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 98.5 98.5"
+                                                enable-background="new 0 0 98.5 98.5" xml:space="preserve">
+                                                <path class="checkmark" fill="none" stroke-width="8" stroke-miterlimit="10"
+                                                    d="M81.7,17.8C73.5,9.3,62,4,49.2,4
+                        C24.3,4,4,24.3,4,49.2s20.3,45.2,45.2,45.2s45.2-20.3,45.2-45.2c0-8.6-2.4-16.6-6.5-23.4l0,0L45.6,68.2L24.7,47.3" />
+                                            </svg>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <input class="selector-input pipeline" type="checkbox" id="item-23" name="item-23">
+                                        <label for="item-23" class="text">Próximos 30 dias</label>
+                                        <label for="item-23" class="button"></label>
+                                        <div class="wrapper-selector-box">
+                                            <svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 98.5 98.5"
+                                                enable-background="new 0 0 98.5 98.5" xml:space="preserve">
+                                                <path class="checkmark" fill="none" stroke-width="8" stroke-miterlimit="10"
+                                                    d="M81.7,17.8C73.5,9.3,62,4,49.2,4
+                        C24.3,4,4,24.3,4,49.2s20.3,45.2,45.2,45.2s45.2-20.3,45.2-45.2c0-8.6-2.4-16.6-6.5-23.4l0,0L45.6,68.2L24.7,47.3" />
+                                            </svg>
+                                        </div>
+                                    </li>
+        
+                                </ul>
+                            </div>
+                            
                         </div>
+                        
                         <div id="chartdiv"></div>
                         <div class="objectivo-global">
                             <svg id="icon" xmlns="http://www.w3.org/2000/svg" width="40.888" height="40.888"
@@ -361,10 +412,10 @@
                                 transform="translate(-4 -10)" fill="#363636" />
                         </svg>
                     </div>
-                    <div class="more-options-selector">
+                    <div class="more-options-selector ">
                         <ul>
                             <li>
-                                <input class="selector-input" type="checkbox" id="item-1" name="item-1">
+                                <input class="selector-input agenda" type="checkbox" id="item-1" name="item-1">
                                 <label for="item-1" class="text">Hoje</label>
                                 <label for="item-1" class="button"></label>
                                 <div class="wrapper-selector-box">
@@ -377,7 +428,7 @@
                                 </div>
                             </li>
                             <li>
-                                <input class="selector-input" type="checkbox" id="item-2" name="item-2">
+                                <input class="selector-input agenda" type="checkbox" id="item-2" name="item-2">
                                 <label for="item-2" class="text">Últimos 7 dias</label>
                                 <label for="item-2" class="button"></label>
                                 <div class="wrapper-selector-box">
@@ -390,7 +441,7 @@
                                 </div>
                             </li>
                             <li>
-                                <input class="selector-input" type="checkbox" id="item-3" name="item-3">
+                                <input class="selector-input agenda" type="checkbox" id="item-3" name="item-3">
                                 <label for="item-3" class="text">Próximos 30 dias</label>
                                 <label for="item-3" class="button"></label>
                                 <div class="wrapper-selector-box">

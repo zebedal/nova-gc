@@ -110,7 +110,119 @@ li {
         @include sub-menu-items;
     }
 }
+.more-options-wrapper {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    z-index: 99999;
+    perspective: 1000px;
+    .more-options-icon {
+        transition: opacity 0.4s ease-out;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+    .more-options-selector {
+        position: absolute;
+        opacity: 0;
+        top: 30px;
+        right: 0;
+        width: 180px;
+        height: auto;
+        border-radius: 10px;
+        background: $font-color;
+        /* border: 1px solid rgba(0, 0, 0, 0.3); */
+        transition: all 0.4s ease-in-out;
+        transform: rotateX(90deg);
+        transform-origin: top;
+        pointer-events: none;
+        &.open {
+            transform: rotateX(0);
+            opacity: 1;
+            pointer-events: all;
+        }
+        & ul {
+            list-style: none;
+            padding: 4px 0;
+            margin: 0 20px;
+            font-weight: 300;
+        }
 
+        & ul li {
+            position: relative;
+            display: block;
+            margin: 24px 0;
+            height: 14px;
+        }
+
+        & ul .text {
+            float: left;
+            font-size: $list-item-size;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            color: $list-item-color;
+        }
+
+        & ul .button {
+            position: relative;
+            z-index: 2;
+            box-sizing: border-box;
+            float: right;
+            width: 20px;
+            height: 20px;
+            border: 1px solid white;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        & ul .checkmark {
+            position: absolute;
+            stroke: $red;
+            fill: none;
+            stroke-dashoffset: 340;
+            stroke-dasharray: 360;
+        }
+
+        & ul input {
+            display: none;
+        }
+
+        ul li .wrapper-selector-box {
+            position: absolute;
+            width: 20px;
+            right: 0;
+        }
+
+        & ul input.selected ~ {
+            .text {
+                color: $red;
+            }
+            .wrapper-selector-box .checkmark {
+                animation: dash 0.5s ease-out forwards;
+                opacity: 1;
+            }
+            .button {
+                opacity: 0;
+            }
+        }
+
+        .checkmark {
+            display: block;
+            stroke-width: 8;
+            opacity: 0;
+        }
+
+        @keyframes dash {
+            0% {
+                stroke-dashoffset: 340;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+    }
+}
 //MODULE STYLES
 .wrapper {
     width: 92%;
@@ -130,7 +242,8 @@ li {
         "left-content left-content agenda";
     grid-template-rows: 90px 1fr;
     grid-template-columns: repeat(3, 1fr);
-    overflow: hidden;
+    overflow: auto;
+    position: relative;
     header {
         grid-area: head;
         background: white;
@@ -219,8 +332,8 @@ li {
     }
     .left-content {
         grid-area: left-content;
-        /*  background: green; */
         padding-left: calc(#{$wrapper-padding} + 10px);
+        margin-bottom: 30px;
         .carteira {
             margin-top: 60px;
             .carteira-boxes-container {
@@ -234,6 +347,9 @@ li {
                 flex-flow: row wrap;
                 .carteira-box {
                     @include carteira-boxes;
+                    &:hover {
+                        transform: translateY(-5px);
+                    }
                     .arrow-up {
                         position: absolute;
                         top: -10px;
@@ -266,6 +382,7 @@ li {
 
         .pipeline {
             margin-top: 60px;
+            margin-bottom: 30px;
             .pipeline-container {
                 margin-top: 20px;
                 border-radius: 25px;
@@ -337,130 +454,19 @@ li {
     .agenda {
         grid-area: agenda;
         /* background: red; */
+        max-height: 800px;
         border-radius: 25px;
         background-color: white;
         margin-right: $wrapper-padding;
         margin-top: 30px;
-        margin-bottom: 30px;
+        margin-bottom: 60px;
         margin-left: 60px;
         padding: 30px 20px;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
         position: relative;
         z-index: 8;
         /* background-image: linear-gradient(#FFFFFF, #F6F6F6); */
-        .more-options-wrapper {
-            position: absolute;
-            top: 25px;
-            right: 40px;
-            z-index: 99999;
-            perspective: 1000px;
-            .more-options-icon {
-                transition: opacity 0.4s ease-out;
-                cursor: pointer;
-                &:hover {
-                    opacity: 0.5;
-                }
-            }
-            .more-options-selector {
-                position: absolute;
-                opacity: 0;
-                top: 30px;
-                right: 0;
-                width: 180px;
-                height: auto;
-                border-radius: 10px;
-                background: $font-color;
-                border: 1px solid rgba(0, 0, 0, 0.3);
-                transition: all 0.4s ease-in-out;
-                transform: rotateX(90deg);
-                transform-origin: top;
-                pointer-events: none;
-                &.open {
-                    transform: rotateX(0);
-                    opacity: 1;
-                    pointer-events: all;
-                }
-                & ul {
-                    list-style: none;
-                    padding: 4px 0;
-                    margin: 0 20px;
-                    font-weight: 300;
-                }
-
-                & ul li {
-                    position: relative;
-                    display: block;
-                    margin: 24px 0;
-                    height: 14px;
-                }
-
-                & ul .text {
-                    float: left;
-                    font-size: $list-item-size;
-                    cursor: pointer;
-                    transition: all 0.3s ease-in-out;
-                    color: $list-item-color;
-                }
-
-                & ul .button {
-                    position: relative;
-                    z-index: 2;
-                    box-sizing: border-box;
-                    float: right;
-                    width: 20px;
-                    height: 20px;
-                    border: 1px solid white;
-                    border-radius: 50%;
-                    cursor: pointer;
-                }
-
-                & ul .checkmark {
-                    position: absolute;
-                    stroke: $red;
-                    fill: none;
-                    stroke-dashoffset: 340;
-                    stroke-dasharray: 360;
-                }
-
-                & ul input {
-                    display: none;
-                }
-
-                ul li .wrapper-selector-box {
-                    position: absolute;
-                    width: 20px;
-                    right: 0;
-                }
-
-                & ul input.selected ~ {
-                    .text {
-                        color: $red;
-                    }
-                    .wrapper-selector-box .checkmark {
-                        animation: dash 0.5s ease-out forwards;
-                        opacity: 1;
-                    }
-                    .button {
-                        opacity: 0;
-                    }
-                }
-
-                .checkmark {
-                    display: block;
-                    stroke-width: 8;
-                    opacity: 0;
-                }
-
-                @keyframes dash {
-                    0% {
-                        stroke-dashoffset: 340;
-                    }
-                    100% {
-                        stroke-dashoffset: 0;
-                    }
-                }
-            }
-        }
+        
         .agenda-container {
             height: 35%;
             margin-top: 30px;
