@@ -152,7 +152,7 @@ li {
         & ul li {
             position: relative;
             display: block;
-            margin: 24px 0;
+            margin: 22px 0;
             height: 14px;
         }
 
@@ -228,7 +228,6 @@ li {
     width: 92%;
     max-width: 1440px;
     height: 92%;
-    
     position: relative;
 }
 .inner-wrapper {
@@ -333,7 +332,7 @@ li {
     .left-content {
         grid-area: left-content;
         padding-left: calc(#{$wrapper-padding} + 10px);
-        margin-bottom: 30px;
+        /* margin-bottom: 30px; */
         .carteira {
             margin-top: 60px;
             .carteira-boxes-container {
@@ -348,7 +347,8 @@ li {
                 .carteira-box {
                     @include carteira-boxes;
                     &:hover {
-                        transform: translateY(-5px);
+                        transform: translateY(-5px) scale(1);
+                        box-shadow: 2px 3px 4px rgba(0, 0, 0, 4);
                     }
                     .arrow-up {
                         position: absolute;
@@ -382,7 +382,7 @@ li {
 
         .pipeline {
             margin-top: 60px;
-            margin-bottom: 30px;
+            /* padding-bottom: 30px; */
             .pipeline-container {
                 margin-top: 20px;
                 border-radius: 25px;
@@ -459,7 +459,7 @@ li {
         background-color: white;
         margin-right: $wrapper-padding;
         margin-top: 30px;
-        margin-bottom: 60px;
+        margin-bottom: 30px;
         margin-left: 60px;
         padding: 30px 20px;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
@@ -674,8 +674,6 @@ tspan {
                 margin-right: 20px;
             }
         }
-
-
     }
     &.open {
         transform: translate(-50%, -20%);

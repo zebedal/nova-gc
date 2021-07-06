@@ -93,6 +93,7 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         font-size: 12px;
+        font-weight: 300;
       }
       .cld-number:hover .cld-title{
         display: block;
@@ -106,7 +107,7 @@
         border-left: 7.5px solid transparent;
         border-right: 7.5px solid transparent;
 
-        border-bottom: 7.5px solid #ccc;
+        border-bottom: 7.5px solid #363636;
       }
       .cld-number.eventday{
         font-weight: bold;
